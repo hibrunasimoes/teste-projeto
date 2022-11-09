@@ -65,19 +65,9 @@
   <div class="row">
     <div class="col-1"></div>
     <div class="container col-10 mt-4 mb-2 d-flex">
-      <div class="m-2">
-        <button type="button" class="btn btn-outline-primary">Todos</button>
-      </div>
-      <div ngbDropdown class="d-inline-block m-2">
-        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
-          Filtrar
-        </button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem>Data de envio</button>
-          <button ngbDropdownItem>Categoria</button>
-          <button ngbDropdownItem>Outro Filtro</button>
-        </div>
-      </div>
+      <button type="button" class="btn btn-outline-primary m-1">Todos</button>
+      <button type="button" class="btn btn-outline-primary m-1">Em Andamento</button>
+      <button type="button" class="btn btn-outline-primary m-1">Finalizados</button>
     </div>
   </div>
   <div class="row">
@@ -87,15 +77,12 @@
         <app-item-training [item]="training" class="col-2 container card shadow m-1 p-1 " *ngFor="let training of trainings | paginate: { itemsPerPage: 15, currentPage: p }" (click)="openXl(content, training)" ></app-item-training>
       </div>
     </div>
-    <nav aria-label="Page navigation example">
-      <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-      </ul>
-    </nav>
+    <div class="flex justify-content-center align-items-center">
+
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+    </div>
+
   </div>
 </body>
 </html>

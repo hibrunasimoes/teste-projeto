@@ -10,13 +10,17 @@ import { ItemTrainingComponent } from './components/item-training/item-training.
 import { FormsModule } from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination'
 import { HttpClientModule } from '@angular/common/http';
+import { TrainingsProgressComponent } from './components/trainings-progress/trainings-progress.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TreinamentoComponent,
     PerfilComponent,
-    ItemTrainingComponent
+    ItemTrainingComponent,
+    TrainingsProgressComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
